@@ -6,30 +6,26 @@
 
 
 // Cargar alumnos desde la base de datos y mostrarlos en la tabla
-  async function cargarAlumnos() {
+  async function cargarPlan() {
     const { data, error } = await supabase
-      .from('informacion_de_alumnos')
+      .from('informacion_del_plan')
       .select('*')
 
 
 //Mostrar Tabla
-    const tbody = document.querySelector('#tabla-alumnos tbody')
+    const tbody = document.querySelector('#tabla-planes tbody')
     tbody.innerHTML = ''
 
-    data.forEach(alumno => {
+    data.forEach(plan => {
       const fila = document.createElement('tr')
       fila.innerHTML = `
-        <td>${alumno.id_alumno ?? ''}</td>
-        <td>${alumno.nombre ?? ''}</td>
-        <td>${alumno.apellido ?? ''}</td>
-        <td>${alumno.telefono ?? ''}</td>
-        <td>${alumno.direccion ?? ''}</td>
-        <td>${alumno.email ?? ''}</td>
-        <td>${alumno.id_profe ?? ''}</td>
-        <td>${alumno.id_plan ?? ''}</td>
+        <td>${plan.id_plan ?? ''}</td>
+        <td>${plan.nombre ?? ''}</td>
+        <td>${plan.precio ?? ''}</td>
+        <td>${plan.cant_clases ?? ''}</td>
       `
       tbody.appendChild(fila)
     })
   }
 
-  cargarAlumnos()
+  cargarPlan()
