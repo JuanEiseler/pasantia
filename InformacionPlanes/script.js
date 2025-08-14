@@ -27,5 +27,14 @@
       tbody.appendChild(fila)
     })
   }
+    async function agregarPlan() {
+    const { error } = await supabase
+      .from('informacion_del_plan')
+      .insert({id_plan: 4,
+                nombre: '4° Plan',
+                precio: '39.000',
+                cant_clases: '24'})
+  }
 
   cargarPlan()
+  agregarPlan()
