@@ -31,6 +31,7 @@
       tbody.appendChild(fila)
     })
   }
+//Agregar Alumno
   async function agregarAlumno() {
     const { error } = await supabase
       .from('informacion_de_alumnos')
@@ -46,3 +47,4 @@
 
   cargarAlumnos()
   agregarAlumno()
+
