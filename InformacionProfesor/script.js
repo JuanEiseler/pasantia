@@ -26,7 +26,8 @@
       tbody.appendChild(fila)
     })
   }
-      async function agregarProfe() {
+//Agregar Profe
+  async function agregarProfe() {
     const { error } = await supabase
       .from('informacion_del_profesor')
       .insert({id_profe: 2,
@@ -36,3 +37,4 @@
 
   infoProfe()
   agregarProfe()
+
