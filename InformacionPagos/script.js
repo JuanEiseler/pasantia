@@ -38,5 +38,4 @@
                 mes: '8',})
   }
   infoPagos()
-  agregarAbono()
 
