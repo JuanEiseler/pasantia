@@ -31,5 +31,18 @@
       tbody.appendChild(fila)
     })
   }
+  async function agregarAlumno() {
+    const { error } = await supabase
+      .from('informacion_de_alumnos')
+      .insert({ id_alumno: 11, 
+                nombre: 'Juan',
+                apellido: 'Perez',
+                telefono: '+5491109834234',
+                direccion: 'Calle Falsa 123',
+                email: 'juanperez@mail.com',
+                id_profe: 1,
+                id_plan: 3})
+  }
 
   cargarAlumnos()
+  agregarAlumno()
