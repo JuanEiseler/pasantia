@@ -27,6 +27,7 @@
       tbody.appendChild(fila)
     })
   }
+//Agregar Plan
     async function agregarPlan() {
     const { error } = await supabase
       .from('informacion_del_plan')
@@ -38,3 +39,4 @@
 
   cargarPlan()
   agregarPlan()
+
