@@ -28,5 +28,13 @@
       tbody.appendChild(fila)
     })
   }
-
+  async function agregarAbono() {
+    const { error } = await supabase
+      .from('informacion_de_pagos')
+      .insert({ id_alumno: 11, 
+                id_plan: 3,
+                fecha: '2025-08-31',
+                mes: '8',})
+  }
   infoPagos()
+  agregarAbono()
