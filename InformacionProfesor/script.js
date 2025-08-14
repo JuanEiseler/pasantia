@@ -26,5 +26,13 @@
       tbody.appendChild(fila)
     })
   }
+      async function agregarProfe() {
+    const { error } = await supabase
+      .from('informacion_del_profesor')
+      .insert({id_profe: 2,
+                nombre: 'Francisco',
+                apellido: 'Álvarez',})
+  }
 
   infoProfe()
+  agregarProfe()
