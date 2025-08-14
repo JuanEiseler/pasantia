@@ -28,6 +28,7 @@
       tbody.appendChild(fila)
     })
   }
+//Agregar Abono
   async function agregarAbono() {
     const { error } = await supabase
       .from('informacion_de_pagos')
@@ -38,3 +39,4 @@
   }
   infoPagos()
   agregarAbono()
+
