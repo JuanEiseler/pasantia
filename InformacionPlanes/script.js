@@ -38,5 +38,4 @@
   }
 
   cargarPlan()
-  agregarPlan()
 
