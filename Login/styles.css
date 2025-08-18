@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../Login/fd.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.login-box {
+    background-color: rgba(0, 0, 0, 0.904);
+    border-radius: 30px;
+    padding: 40px 10px;
+    text-align: center;
+}
+
+.logo {
+    width: 120px; 
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 100px;
+    color: white;
+    margin: 0; 
+    font-weight: bold;
+}
+
+h1 span {
+    color: red; 
+}
+
+input {
+    width: 50%;
+    padding: 15px;
+    margin: 0 0 15px 0; 
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    text-align: left;
+    outline: none;
+}
+button {
+    width: 53%;
+    padding: 15px;
+    background-color: #b50000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff0000;
+}
