@@ -10,6 +10,7 @@
     const { data, error } = await supabase
       .from('informacion_de_alumnos')
       .select('*')
+      .order('id_alumno', { ascending: true })
 
 
 //Mostrar Tabla
@@ -32,19 +33,18 @@
     })
   }
 //Agregar Alumno
-  async function agregarAlumno() {
+  async function agregarAlumno(id_alumno, nombre, apellido, telefono, direccion, email, id_profe, id_plan) {
     const { error } = await supabase
       .from('informacion_de_alumnos')
-      .insert({ id_alumno: 11, 
-                nombre: 'Juan',
-                apellido: 'Perez',
-                telefono: '+5491109834234',
-                direccion: 'Calle Falsa 123',
-                email: 'juanperez@mail.com',
-                id_profe: 1,
-                id_plan: 3})
+      .insert({ id_alumno: id_alumno, 
+                nombre: nombre,
+                apellido: apellido,
+                telefono: telefono,
+                direccion: direccion,
+                email: email,
+                id_profe: id_profe,
+                id_plan: id_plan})
   }
 
   cargarAlumnos()
-
-
+  //agregarAlumno(id_alumno, "nombre", "apellido", "telefono", "direccion", "email", id_profe, id_plan);
