@@ -10,6 +10,7 @@
     const { data, error } = await supabase
       .from('informacion_del_plan')
       .select('*')
+      .order('id_plan', { ascending: true })
 
 
 //Mostrar Tabla
@@ -28,14 +29,14 @@
     })
   }
 //Agregar Plan
-    async function agregarPlan() {
+    async function agregarPlan(id_alumno, nombre, precio, cant_clases) {
     const { error } = await supabase
       .from('informacion_del_plan')
-      .insert({id_plan: 4,
-                nombre: '4° Plan',
-                precio: '39.000',
-                cant_clases: '24'})
+      .insert({id_plan: id_plan,
+                nombre: nombre,
+                precio: precio,
+                cant_clases: cant_clases})
   }
 
   cargarPlan()
-
+  //agregarPlan(id_plan, "nombre", "precio", "cant_clases");
