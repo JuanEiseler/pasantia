@@ -10,6 +10,7 @@
     const { data, error } = await supabase
       .from('informacion_del_profesor')
       .select('*')
+      .order('id_profe', { ascending: true })
 
 
 //Mostrar Tabla
@@ -27,13 +28,13 @@
     })
   }
 //Agregar Profe
-  async function agregarProfe() {
+  async function agregarProfe(id_profe, nombre, apellido) {
     const { error } = await supabase
       .from('informacion_del_profesor')
-      .insert({id_profe: 2,
-                nombre: 'Francisco',
-                apellido: 'Álvarez',})
+      .insert({id_profe: id_profe,
+                nombre: nombre,
+                apellido: apellido,})
   }
 
   infoProfe()
-
+  //agregarProfe(id_profe, "nombre", "apellido");
