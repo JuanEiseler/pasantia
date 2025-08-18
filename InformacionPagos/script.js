@@ -10,6 +10,7 @@
     const { data, error } = await supabase
       .from('informacion_de_pagos')
       .select('*')
+      .order('id_alumno', { ascending: true })
 
 
 //Mostrar Tabla
@@ -29,13 +30,13 @@
     })
   }
 //Agregar Abono
-  async function agregarAbono() {
+  async function agregarAbono(id_alumno, id_plan, fecha, mes) {
     const { error } = await supabase
       .from('informacion_de_pagos')
-      .insert({ id_alumno: 11, 
-                id_plan: 3,
-                fecha: '2025-08-31',
-                mes: '8',})
+      .insert({ id_alumno: id_alumno, 
+                id_plan: id_plan,
+                fecha: fecha,
+                mes: mes})
   }
   infoPagos()
-
+  //agregarAlumno(id_alumno, id_plan, "fecha", "mes");
