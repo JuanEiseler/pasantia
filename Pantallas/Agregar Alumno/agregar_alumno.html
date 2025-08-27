@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="agregar_alumno.css">
+  <link rel="icon" type="logo" href="logo.png">
+  <title>Agregar Alumno</title>
+</head>
+<body>
+<header>
+  <a href="../Botones/botones.html">
+    <img src="logo.png" alt="Logo">
+  </a>
+</header>
+
+<main>
+  <form id="form" novalidate>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+    <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
+    <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required />
+    <input type="text" id="direccion" name="direccion" placeholder="Dirección" required />
+    <input type="text" id="email" name="email" placeholder="Mail" required />
+    <select id="id_plan" name="id_plan" required>
+      <option value="" disabled selected>Plan</option>
+      <option value="1">Plan 1</option>
+      <option value="2">Plan 2</option>
+      <option value="3">Plan 3</option>
+    </select>
+
+    <button type="button" id="boton">+</button>
+  </form>
+</main>
+<script type="module" src="agregar_alumno.js"></script>
+</body>
+</html>
