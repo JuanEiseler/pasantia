@@ -58,7 +58,7 @@ button#boton {
   align-items: center;
 }
 
-select {
+select#id_plan {
   background: rgb(255, 255, 255);
   border: none;
   border-radius: 30px;
@@ -66,4 +66,14 @@ select {
   font-size: 15px;
   color: black;
   width: 437px;
+}
+
+select#id_profe {
+  background: rgb(255, 255, 255);
+  border: none;
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 15px;
+  color: black;
+  width: 900px;
 }
