@@ -1,7 +1,8 @@
 // Inicializa Supabase
-const supabaseUrl = 'https://qbfuespsiovkwhnvxvvj.supabase.co'; // Reemplaza con tu URL de Supabase
-const supabaseKey = 'sb_publishable_GBetoo-b8I89bdyS5k_dYw_4MjAIpLI'; // Reemplaza con tu clave de Supabase
-const supabase = supabase.createClient(supabaseUrl, supabaseKey); // Inicializa el cliente de Supabase
+import { createClient } from 'https://esm.sh/@supabase/supabase-js';
+const supabaseUrl = 'https://qbfuespsiovkwhnvxvvj.supabase.co'; 
+const supabaseKey = 'sb_publishable_GBetoo-b8I89bdyS5k_dYw_4MjAIpLI'; 
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 // Función para actualizar el precio de un plan
 async function updatePlanPrice(planId, price) {
@@ -9,13 +10,13 @@ async function updatePlanPrice(planId, price) {
         alert('Por favor, ingresa un precio válido y mayor que cero.');
         return;
     }   
-}
-    // Actualizar el precio
-    const { data, error } = await supabase
-        .from('informacion_del_plan')
-        .update({ precio: parseFloat(price) })
-        .eq('id_plan', planId);
 
+// Actualizar el precio
+const { data, error } = await supabase
+    .from('informacion_del_plan')
+    .update({ precio: parseFloat(price) })
+    .eq('id_plan', planId);
+}
 
 // Eventos para los botones
 document.getElementById('btn1').addEventListener('click', () => {
