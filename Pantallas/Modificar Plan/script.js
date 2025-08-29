@@ -33,3 +33,25 @@ document.getElementById('btn3').addEventListener('click', () => {
     const plan3Price = document.getElementById('plan3').value;
     updatePlanPrice(3, plan3Price); // Actualiza el plan 3
 });
+
+  async function cargarPlanes() {
+    const { data, error } = await supabase
+      .from('informacion_del_plan')
+      .select('*')
+      .order('cant_clases', { ascending: true })
+
+
+    const tbody = document.querySelector('#tabla-planes tbody')
+    tbody.innerHTML = ''
+
+    data.forEach(planes => {
+      const fila = document.createElement('tr')
+      fila.innerHTML = `
+        <td>${planes.nombre ?? ''}</td>
+        <td>${planes.precio ?? ''}</td>
+        <td>${planes.cant_clases ?? ''}</td>
+      `
+      tbody.appendChild(fila)
+    })
+  }
+    cargarPlanes()
